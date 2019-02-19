@@ -1,14 +1,16 @@
 
 using System;
+using System.Collections.Generic;
+
 namespace Tobania.AngularVsReact.Models
 {
     public class Todo
     {
         public Guid Id { get; set; }
         public string Title { get; set; }
-        public bool Checked { get; set; } = false;
         public DateTime CreatedDate { get; set; }
 
+        public ICollection<TodoItem> TodoItems { get; set; } = new List<TodoItem>();
         public Todo() { }
 
         public Todo(string title)
@@ -18,10 +20,14 @@ namespace Tobania.AngularVsReact.Models
             CreatedDate = DateTime.UtcNow;
         }
 
-        public void Update(string title, bool isChecked = false)
+        public void Update(string title) => Title = title;
+
+        public TodoItem AddTodoItem(string text)
         {
-            Title = title;
-            Checked = isChecked;
+            var item = new TodoItem(this, text);
+            TodoItems.Add(item);
+
+            return item;
         }
     }
 }
