@@ -31,7 +31,7 @@ namespace Tobania.AngularVsReact.Controllers
 
         // POST api/todos
         [HttpPost]
-        public async Task<ActionResult<Todo>> Post([FromBody] TodoWriteModel value)
+        public async Task<ActionResult<Todo>> Create([FromBody] TodoWriteModel value)
         {
             if (value == null || !ModelState.IsValid) return BadRequest();
 
@@ -43,14 +43,14 @@ namespace Tobania.AngularVsReact.Controllers
 
         // PUT api/todos/9c282146-e855-4977-8093-292004c1b043
         [HttpPut("{id}")]
-        public async Task<ActionResult<Todo>> Put(Guid id, [FromBody] TodoWriteModel value)
+        public async Task<ActionResult<Todo>> Update(Guid id, [FromBody] TodoWriteModel value)
         {
             var todo = await _todoRepository.ById(id);
             if (todo == null) return NotFound();
 
             if (value == null || !ModelState.IsValid) return BadRequest();
 
-            todo.Update(value.Title, value.Checked);
+            todo.Update(value.Title);
 
             await _todoRepository.Save(todo);
 
