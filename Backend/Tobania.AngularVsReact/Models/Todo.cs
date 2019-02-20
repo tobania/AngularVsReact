@@ -11,18 +11,22 @@ namespace Tobania.AngularVsReact.Models
     {
         [BsonId]
         public ObjectId InternalId { get; set; }
-        public Guid Id { get; set; }
+        public Guid Identifier { get; set; }
         public string Title { get; set; }
         public DateTime CreatedDate { get; set; }
 
         public ICollection<TodoItem> TodoItems { get; set; } = new List<TodoItem>();
+
+        [BsonIgnore] // to track if it is newly created
+        public bool __IsNew { get; set; }
         public Todo() { }
 
         public Todo(string title)
         {
-            Id = Guid.NewGuid();
+            Identifier = Guid.NewGuid();
             Title = title;
             CreatedDate = DateTime.UtcNow;
+            __IsNew = true;
         }
 
         public void Update(string title) => Title = title;
@@ -35,6 +39,6 @@ namespace Tobania.AngularVsReact.Models
             return item;
         }
 
-        public TodoItem GetTodoItem(Guid id) => TodoItems.FirstOrDefault(i => i.Id == id);
+        public TodoItem GetTodoItem(Guid id) => TodoItems.FirstOrDefault(i => i.Identifier == id);
     }
 }

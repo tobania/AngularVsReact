@@ -9,3 +9,6 @@ C:\projects\WhatTheHack\AngularVSReact\Backend\Tobania.AngularVsReact\obj\Debug\
 C:\projects\WhatTheHack\AngularVSReact\Backend\Tobania.AngularVsReact\obj\Debug\netcoreapp2.2\Tobania.AngularVsReact.AssemblyInfoInputs.cache
 C:\projects\WhatTheHack\AngularVSReact\Backend\Tobania.AngularVsReact\obj\Debug\netcoreapp2.2\Tobania.AngularVsReact.AssemblyInfo.cs
 C:\projects\WhatTheHack\AngularVSReact\Backend\Tobania.AngularVsReact\obj\Debug\netcoreapp2.2\Tobania.AngularVsReact.RazorTargetAssemblyInfo.cache
+C:\projects\WhatTheHack\AngularVSReact\Backend\Tobania.AngularVsReact\bin\Debug\netcoreapp2.2\Tobania.AngularVsReact.pdb
+C:\projects\WhatTheHack\AngularVSReact\Backend\Tobania.AngularVsReact\obj\Debug\netcoreapp2.2\Tobania.AngularVsReact.dll
+C:\projects\WhatTheHack\AngularVSReact\Backend\Tobania.AngularVsReact\obj\Debug\netcoreapp2.2\Tobania.AngularVsReact.pdb
