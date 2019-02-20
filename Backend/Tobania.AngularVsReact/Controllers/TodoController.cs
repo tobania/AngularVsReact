@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Tobania.AngularVsReact.Models;
@@ -39,6 +38,42 @@ namespace Tobania.AngularVsReact.Controllers
             await _todoRepository.Save(todo);
 
             return Ok(todo);
+        }
+
+
+        // Post api/todos/9c282146-e855-4977-8093-292004c1b043/items
+
+        [HttpPost("{id}/items")]
+        public async Task<ActionResult> CreateItem(Guid id, [FromBody] TodoItemWriteModel value)
+        {
+            var todo = await _todoRepository.ById(id);
+            if (todo == null) return NotFound();
+
+            if (!ModelState.IsValid) return BadRequest();
+
+            todo.AddTodoItem(value.Text);
+
+            await _todoRepository.Save(todo);
+
+            return NoContent();
+        }
+
+        // Post api/todos/9c282146-e855-4977-8093-292004c1b043/items/8a992226-d845-3977-8093-292004c1b023
+
+        [HttpPost("{id}/items/{todoId}/toggle")]
+        public async Task<ActionResult> ToggleItem(Guid id, Guid todoId)
+        {
+            var todo = await _todoRepository.ById(id);
+            if (todo == null) return NotFound();
+
+            if (!ModelState.IsValid) return BadRequest();
+
+            var item = todo.GetTodoItem(todoId);
+            item.Toggle();
+
+            await _todoRepository.Save(todo);
+
+            return NoContent();
         }
 
         // PUT api/todos/9c282146-e855-4977-8093-292004c1b043

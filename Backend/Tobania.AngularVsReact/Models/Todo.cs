@@ -1,6 +1,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Tobania.AngularVsReact.Models
 {
@@ -29,5 +30,7 @@ namespace Tobania.AngularVsReact.Models
 
             return item;
         }
+
+        public TodoItem GetTodoItem(Guid id) => TodoItems.FirstOrDefault(i => i.Id == id);
     }
 }

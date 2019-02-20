@@ -24,5 +24,8 @@ namespace Tobania.AngularVsReact.Models
             Text = text;
             Checked = isChecked;
         }
+
+        public void Toggle() => Checked = !Checked;
+
     }
 }
