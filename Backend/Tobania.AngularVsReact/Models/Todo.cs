@@ -2,11 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace Tobania.AngularVsReact.Models
 {
     public class Todo
     {
+        [BsonId]
+        public ObjectId InternalId { get; set; }
         public Guid Id { get; set; }
         public string Title { get; set; }
         public DateTime CreatedDate { get; set; }

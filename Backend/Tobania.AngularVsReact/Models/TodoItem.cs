@@ -1,9 +1,14 @@
 
 using System;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+
 namespace Tobania.AngularVsReact.Models
 {
     public class TodoItem
     {
+        [BsonId]
+        public ObjectId InternalId { get; set; }
         public Guid Id { get; set; }
         public string Text { get; set; }
         public bool Checked { get; set; }

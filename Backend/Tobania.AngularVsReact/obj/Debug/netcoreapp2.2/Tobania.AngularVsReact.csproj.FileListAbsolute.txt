@@ -1,0 +1,11 @@
+C:\projects\WhatTheHack\AngularVSReact\Backend\Tobania.AngularVsReact\bin\Debug\netcoreapp2.2\Tobania.AngularVsReact.deps.json
+C:\projects\WhatTheHack\AngularVSReact\Backend\Tobania.AngularVsReact\bin\Debug\netcoreapp2.2\Tobania.AngularVsReact.runtimeconfig.json
+C:\projects\WhatTheHack\AngularVSReact\Backend\Tobania.AngularVsReact\bin\Debug\netcoreapp2.2\Tobania.AngularVsReact.runtimeconfig.dev.json
+C:\projects\WhatTheHack\AngularVSReact\Backend\Tobania.AngularVsReact\bin\Debug\netcoreapp2.2\Tobania.AngularVsReact.dll
+C:\projects\WhatTheHack\AngularVSReact\Backend\Tobania.AngularVsReact\obj\Debug\netcoreapp2.2\Tobania.AngularVsReact.csprojAssemblyReference.cache
+C:\projects\WhatTheHack\AngularVSReact\Backend\Tobania.AngularVsReact\obj\Debug\netcoreapp2.2\Tobania.AngularVsReact.csproj.CoreCompileInputs.cache
+C:\projects\WhatTheHack\AngularVSReact\Backend\Tobania.AngularVsReact\obj\Debug\netcoreapp2.2\Tobania.AngularVsReact.RazorAssemblyInfo.cache
+C:\projects\WhatTheHack\AngularVSReact\Backend\Tobania.AngularVsReact\obj\Debug\netcoreapp2.2\Tobania.AngularVsReact.RazorAssemblyInfo.cs
+C:\projects\WhatTheHack\AngularVSReact\Backend\Tobania.AngularVsReact\obj\Debug\netcoreapp2.2\Tobania.AngularVsReact.AssemblyInfoInputs.cache
+C:\projects\WhatTheHack\AngularVSReact\Backend\Tobania.AngularVsReact\obj\Debug\netcoreapp2.2\Tobania.AngularVsReact.AssemblyInfo.cs
+C:\projects\WhatTheHack\AngularVSReact\Backend\Tobania.AngularVsReact\obj\Debug\netcoreapp2.2\Tobania.AngularVsReact.RazorTargetAssemblyInfo.cache
