@@ -1,0 +1,17 @@
+<div class="m-5">
+  <div class="container-fluid">
+    <div class="row mt-4">
+      <app-todo-card
+        *ngFor="let todo of (todos$ | async)"
+        [model]="todo"
+        class="col-md-3"
+      >
+      </app-todo-card>
+      <div
+        app-new-todo
+        class="col-md-3"
+        *ngIf="todoService.showNewTodoBlock"
+      ></div>
+    </div>
+  </div>
+</div>

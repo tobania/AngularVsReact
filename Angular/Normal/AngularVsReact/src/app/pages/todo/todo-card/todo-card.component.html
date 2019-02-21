@@ -1,0 +1,24 @@
+<div class="card shadow mb-4">
+  <div class="card-header">{{ model.title }}</div>
+  <div class="card-body">
+    <li
+      *ngFor="let item of model.todoItems"
+      class="list-group-item"
+      app-todo-item
+      [model]="item"
+      [todo]="model"
+    ></li>
+    <div class="row mt-4">
+      <div class="col-10">
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="newTodoItem.text"
+        />
+      </div>
+      <div class="col-2">
+        <div class="btn btn-success float-right" (click)="addItem()">+</div>
+      </div>
+    </div>
+  </div>
+</div>
