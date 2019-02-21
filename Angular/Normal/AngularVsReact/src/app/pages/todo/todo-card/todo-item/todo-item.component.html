@@ -1,0 +1,10 @@
+<div class="form-check">
+  <input
+    type="checkbox"
+    class="form-check-input"
+    id="shopBox"
+    [checked]="model.checked"
+    (change)="toggled($event)"
+  />
+  <label class="form-check-label" for="shopBox">{{ model.text }}</label>
+</div>
