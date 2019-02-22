@@ -2,9 +2,11 @@
   <input
     type="checkbox"
     class="form-check-input"
-    id="shopBox"
+    id="item{{ model.identifier }}"
     [checked]="model.checked"
     (change)="toggled($event)"
   />
-  <label class="form-check-label" for="shopBox">{{ model.text }}</label>
+  <label class="form-check-label" for="item{{ model.identifier }}">{{
+    model.text
+  }}</label>
 </div>

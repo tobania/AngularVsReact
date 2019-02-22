@@ -22,7 +22,6 @@ export class TodoService {
   constructor(private httpClient: HttpClient) {}
 
   public updateTodoWall() {
-    console.log('updating');
     this._trigger.next();
   }
 
@@ -65,7 +64,9 @@ export class TodoService {
   public toggleItem(todo: Todo, todoItem: TodoItem): Observable<boolean> {
     return this.httpClient
       .post(
-        `${this._urlBase}/${todo.identifier}/items/${todoItem.identifier}`,
+        `${this._urlBase}/${todo.identifier}/items/${
+          todoItem.identifier
+        }/toggle`,
         todoItem,
         {
           observe: 'response'

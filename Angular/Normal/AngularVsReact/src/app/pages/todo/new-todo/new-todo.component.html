@@ -2,10 +2,16 @@
   <div class="card-header">
     <div class="row">
       <div class="col-9">
-        <input type="text" class="form-control" />
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="model.title"
+          required
+          minlength="2"
+        />
       </div>
       <div class="offset-1 col-2">
-        <div class="btn btn-success float-right">Save</div>
+        <div class="btn btn-success float-right" (click)="save()">Save</div>
       </div>
     </div>
   </div>
