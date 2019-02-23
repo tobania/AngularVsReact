@@ -1,20 +1,27 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import CreateTodo from '../../HttpServices/Todos/CreateTodoService';
 
-class NewTodo extends Component {
+class NewTodo extends PureComponent {
   constructor() {
     super();
     this.state = { title: '' };
 
     this.handleChange = this.handleChange.bind(this);
+    this.addTodo = this.addTodo.bind(this);
   }
 
   handleChange(event) {
     this.setState({ title: event.target.value });
   }
 
+  addTodo() {
+    const { title } = this.state;
+    const { addCreatedTodo } = this.props;
+    CreateTodo({ title }, addCreatedTodo);
+  }
+
   render() {
-    const { addTodo } = this.props;
     const { title } = this.state;
 
     return (
@@ -26,7 +33,7 @@ class NewTodo extends Component {
                 <input type="text" className="form-control" value={title} onChange={this.handleChange} />
               </div>
               <div className="offset-1 col-2">
-                <button type="button" className="btn btn-success float-right" onClick={() => addTodo(title)}>Save</button>
+                <button type="button" className="btn btn-success float-right" onClick={this.addTodo}>Save</button>
               </div>
             </div>
           </div>
@@ -38,7 +45,7 @@ class NewTodo extends Component {
 }
 
 NewTodo.propTypes = {
-  addTodo: PropTypes.func.isRequired,
+  addCreatedTodo: PropTypes.func.isRequired,
 };
 
 NewTodo.defaultProps = {

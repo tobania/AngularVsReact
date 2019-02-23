@@ -42,6 +42,8 @@
     "react-app-polyfill": "^0.2.1",
     "react-dev-utils": "^7.0.3",
     "react-dom": "^16.8.2",
+    "react-test-renderer": "^16.8.3",
+    "request": "^2.88.0",
     "resolve": "1.10.0",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.1",
@@ -64,7 +66,8 @@
     ],
     "globals": {
       "document": true,
-      "window": true
+      "window": true,
+      "fetch": true
     },
     "rules": {
       "linebreak-style": "off",
@@ -126,7 +129,10 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
-      "!src/**/*.d.ts"
+      "!src/**/*.d.ts",
+      "!src/index.jsx",
+      "!src/serviceWorker.js",
+      "!src/HttpServices/**/*.js"
     ],
     "resolver": "jest-pnp-resolver",
     "setupFiles": [
@@ -164,8 +170,8 @@
       "node"
     ],
     "watchPlugins": [
-      "C:\\Projects\\ReactDemo\\reactvsangular\\node_modules\\jest-watch-typeahead\\filename.js",
-      "C:\\Projects\\ReactDemo\\reactvsangular\\node_modules\\jest-watch-typeahead\\testname.js"
+      "jest-watch-typeahead\\filename.js",
+      "jest-watch-typeahead\\testname.js"
     ]
   },
   "babel": {

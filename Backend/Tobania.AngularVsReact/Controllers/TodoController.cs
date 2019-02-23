@@ -51,11 +51,11 @@ namespace Tobania.AngularVsReact.Controllers
 
             if (!ModelState.IsValid) return BadRequest();
 
-            todo.AddTodoItem(value.Text);
+            var todoItem = todo.AddTodoItem(value.Text);
 
             await _todoRepository.Save(todo);
 
-            return NoContent();
+            return Ok(todoItem);
         }
 
         // Post api/todos/9c282146-e855-4977-8093-292004c1b043/items/8a992226-d845-3977-8093-292004c1b023
@@ -73,7 +73,7 @@ namespace Tobania.AngularVsReact.Controllers
 
             await _todoRepository.Save(todo);
 
-            return NoContent();
+            return Ok();
         }
 
         // PUT api/todos/9c282146-e855-4977-8093-292004c1b043
@@ -101,7 +101,7 @@ namespace Tobania.AngularVsReact.Controllers
             if (todo == null) return NotFound();
             await _todoRepository.Delete(todo);
 
-            return NoContent();
+            return Ok();
         }
     }
 }
