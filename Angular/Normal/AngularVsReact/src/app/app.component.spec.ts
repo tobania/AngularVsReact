@@ -1,12 +1,29 @@
-import { TestBed, async } from '@angular/core/testing';
+import { APP_BASE_HREF } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { async, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
+
 import { AppComponent } from './app.component';
+import { AppRouteModule } from './appRouter.module';
+import { NavBarComponent } from './layout/nav-bar/nav-bar.component';
+import { NewTodoComponent } from './pages/todo/new-todo/new-todo.component';
+import { TodoCardComponent } from './pages/todo/todo-card/todo-card.component';
+import { TodoItemComponent } from './pages/todo/todo-card/todo-item/todo-item.component';
+import { TodoComponent } from './pages/todo/todo.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        NavBarComponent,
+        TodoComponent,
+        TodoCardComponent,
+        TodoItemComponent,
+        NewTodoComponent
       ],
+      imports: [AppRouteModule, HttpClientModule, FormsModule],
+      providers: [{ provide: APP_BASE_HREF, useValue: '/' }]
     }).compileComponents();
   }));
 
@@ -14,18 +31,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'AngularVsReact'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('AngularVsReact');
-  });
-
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to AngularVsReact!');
   });
 });

@@ -1,4 +1,7 @@
+import { HttpClientModule } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
+import { TodoService } from 'src/app/services/todo.service';
 
 import { TodoItemComponent } from './todo-item.component';
 
@@ -8,9 +11,10 @@ describe('TodoItemComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TodoItemComponent ]
-    })
-    .compileComponents();
+      declarations: [TodoItemComponent],
+      imports: [HttpClientModule, FormsModule],
+      providers: [TodoService]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
