@@ -12,7 +12,7 @@ import { Todo, TodoItem } from '../models/todo';
 export class TodoService {
   private _urlBase = `${environment.apiRoot}/todos`;
 
-  private _trigger: Subject<void> = new Subject<void>();
+  protected _trigger: Subject<void> = new Subject<void>();
 
   public items$: Observable<Todo[]> = merge(of(undefined), this._trigger).pipe(
     flatMap(_ => this.all())
