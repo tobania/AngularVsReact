@@ -5,6 +5,7 @@ import NewTodo from '../Todo/NewTodo';
 import GetTodos from '../../HttpServices/Todos/GetTodosService';
 import ToggleTodoItem from '../../Services/ToggleTodoItemService';
 import AddTodoItem from '../../Services/AddTodoItemService';
+import Navbar from '../Common/Navbar';
 
 export default class Todos extends Component {
   constructor() {
@@ -51,22 +52,29 @@ export default class Todos extends Component {
   render() {
     const { todos, showNew } = this.state;
     return (
-      <div className="row mt-4">
-        {
-          todos.map(todo => (
-            <Todo
-              key={todo.identifier}
-              addCreatedTodoItem={this.addCreatedTodoItem}
-              toggleTodoItem={this.toggleTodoItem}
-              {...todo}
-            />
-          ))
-        }
-        {
-          showNew
-          && <NewTodo addCreatedTodo={this.addCreatedTodo} />
-        }
-      </div>
+      <>
+        <Navbar showNewTodo={this.showNewTodo} />
+        <div className="m-5">
+          <div className="container-fluid">
+            <div className="row mt-4">
+              {
+                todos.map(todo => (
+                  <Todo
+                    key={todo.identifier}
+                    addCreatedTodoItem={this.addCreatedTodoItem}
+                    toggleTodoItem={this.toggleTodoItem}
+                    {...todo}
+                  />
+                ))
+              }
+              {
+                showNew
+                && <NewTodo addCreatedTodo={this.addCreatedTodo} />
+              }
+            </div>
+          </div>
+        </div>
+      </>
     );
   }
 }
